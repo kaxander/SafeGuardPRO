@@ -2,9 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Logo"
-        android:title="Logo"
-        android:icon="@drawable/logo"
-        />
+        android:title="home"
+        android:id="@+id/android"
+        android:icon="@drawable/ic_android_black_24dp"/>
+
+    <item
+        android:title="logo"
+        android:id="@+id/logo"
+        android:icon="@drawable/logo"/>
 
 </menu>

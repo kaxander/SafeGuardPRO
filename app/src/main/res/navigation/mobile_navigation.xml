@@ -8,6 +8,6 @@
     <activity
         android:id="@+id/mainActivity"
         android:name="com.fourprograms.safeguardpro.view.MainActivity"
-        android:label="cadastro_entrega"
-        tools:layout="@layout/cadastro_entrega" />
+        android:label="activity_main"
+        tools:layout="@layout/cadastro_sup" />
 </navigation>
