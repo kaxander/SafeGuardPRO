@@ -7,6 +7,6 @@ import com.fourprograms.safeguardpro.R
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.`informacoes.xml`)
+        setContentView(R.layout.activity_main)
     }
 }
