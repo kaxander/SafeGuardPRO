@@ -109,7 +109,7 @@ o canteiro de obras um exemplo muito comum."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar"
         app:layout_constraintVertical_bias="0.394"
-        app:srcCompat="@drawable/mask_group" />
+        app:srcCompat="@drawable/capac" />
 
     <ImageView
         android:id="@+id/imageView6"
