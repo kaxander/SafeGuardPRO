@@ -119,7 +119,7 @@ o canteiro de obras um exemplo muito comum."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/group_2" />
+        app:srcCompat="@drawable/navbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
