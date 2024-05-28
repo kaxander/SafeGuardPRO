@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvNomeEpi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacete"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/lblCA"/>
+
+            <TextView
+                android:id="@+id/lblCA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CA: "
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvCA"
+                app:layout_constraintStart_toEndOf="@+id/tvNomeEpi"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12345"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/lblValidade"
+                app:layout_constraintStart_toEndOf="@+id/lblCA"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblValidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Validade: "
+                android:textStyle="bold"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/tvValidade"
+                app:layout_constraintStart_toEndOf="@id/tvCA"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvValidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05/10/2035"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@+id/lblColetivo"
+                app:layout_constraintStart_toEndOf="@+id/lblValidade"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/lblColetivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coletivo: "
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvColetivo"
+                app:layout_constraintStart_toEndOf="@id/tvValidade"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvColetivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sim"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/lblColetivo"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <Button
+                android:id="@+id/btnEdt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Editar"
+                android:backgroundTint="@color/orange"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnDelete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeEpi" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Excluir"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnEdt"
+                android:textColor="#FF0000"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:layout_constraintTop_toBottomOf="@id/tvNomeEpi" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

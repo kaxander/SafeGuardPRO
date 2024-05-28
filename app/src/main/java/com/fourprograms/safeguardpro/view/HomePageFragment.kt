@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import com.fourprograms.safeguardpro.R
 import com.fourprograms.safeguardpro.databinding.FragmentCadastroEpiBinding
-import com.fourprograms.safeguardpro.databinding.FragmentEscolhaEpiBinding
+import com.fourprograms.safeguardpro.databinding.FragmentHomePageBinding
 
-class EscolhaEpiFragment : Fragment() {
-    private var _binding: FragmentEscolhaEpiBinding? = null
+class HomePageFragment : Fragment() {
+    private var _binding: FragmentHomePageBinding? = null
 
-    private val binding: FragmentEscolhaEpiBinding get() = _binding!!
+    private val binding: FragmentHomePageBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentEscolhaEpiBinding.inflate(inflater, container, false)
+        _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         return binding.root
     }
 }
