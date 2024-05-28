@@ -8,27 +8,33 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.fourprograms.safeguardpro.R
 import com.fourprograms.safeguardpro.databinding.FragmentCadastroEpiBinding
-import com.fourprograms.safeguardpro.databinding.FragmentCadastroSupervisorBinding
+import com.fourprograms.safeguardpro.databinding.FragmentHomePageBinding
 
-class CadastroSupervisorFragment : Fragment() {
+class HomePageFragment : Fragment() {
+    private var _binding: FragmentHomePageBinding? = null
 
-    private var _binding: FragmentCadastroSupervisorBinding? = null
-    private val binding: FragmentCadastroSupervisorBinding get() = _binding!!
+    private val binding: FragmentHomePageBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentCadastroSupervisorBinding.inflate(inflater, container, false)
+        _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnCadastrar.setOnClickListener {
+        binding.btnLogar.setOnClickListener {
             findNavController().navigate(R.id.homepageSupervisorFragment)
+        }
+
+        binding.btnCriarConta.setOnClickListener {
+            findNavController().navigate(R.id.cadastroSupervisorFragment)
         }
     }
 }

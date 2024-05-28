@@ -41,11 +41,11 @@
         android:layout_marginVertical="20dp"/>
 
     <TextView
-        android:id="@+id/tvEntrega"
+        android:id="@+id/tvCriarAtu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="ENTREGA DE EPIs"
+        android:text="Criar Atualização"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold"
@@ -54,54 +54,34 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtIdUser"
+        android:id="@+id/edtAtualizacao"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:paddingHorizontal="30dp"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="80dp"
-        android:hint="ID do funcionário"
+        android:layout_marginTop="70dp"
+        android:hint="Atualização"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/black"
         app:boxStrokeWidth="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvEntrega"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/tvCriarAtu">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:gravity="top"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtEpi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="30dp"
-        app:boxCornerRadiusBottomEnd="20dp"
-        app:boxCornerRadiusBottomStart="20dp"
-        app:boxCornerRadiusTopStart="20dp"
-        app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="EPIs"
-        android:textColorHint="@color/black"
-        app:boxBackgroundColor="@color/white"
-        app:boxStrokeColor="@color/black"
-        app:boxStrokeWidth="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtIdUser">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtEpi"
-        android:text="ENTREGAR"
+        app:layout_constraintTop_toBottomOf="@+id/edtAtualizacao"
+        android:text="CRIAR"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="50dp"

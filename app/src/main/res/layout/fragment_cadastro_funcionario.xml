@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="450dp"
-        android:layout_height="490dp"
+        android:layout_width="550dp"
+        android:layout_height="550dp"
         android:layout_marginBottom="480dp"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="75dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:text="NOVO FUNCIONÁRIO"
         android:textColor="@color/white"
+        android:layout_marginTop="20dp"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +62,7 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:hint="Nome"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/white"
@@ -83,7 +84,7 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:hint="E-mail"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/white"
@@ -97,7 +98,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/edtNumero"
+        android:id="@+id/edtTelefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="30dp"
@@ -105,8 +106,8 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:hint="Número"
+        android:layout_marginTop="30dp"
+        android:hint="Telefone"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/black"
@@ -127,13 +128,13 @@
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:hint="CPF"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/white"
         app:boxStrokeColor="@color/black"
         app:boxStrokeWidth="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtNumero">
+        app:layout_constraintTop_toBottomOf="@+id/edtTelefone">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -141,16 +142,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginVertical="20dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FB7F31"
         android:padding="10dp"
         android:text="CADASTRAR"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/edtCPF"
-        android:backgroundTint="#FB7F31"/>
+        app:layout_constraintTop_toBottomOf="@+id/edtCPF" />
 
 
 

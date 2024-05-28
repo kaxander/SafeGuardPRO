@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,40 +6,40 @@
     tools:context=".view.MainActivity">
 
     <ImageView
-        android:id="@+id/imgInfoEpi"
+        android:id="@+id/imgInfoFunci"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/capac" />
+        android:background="@drawable/trabalhadorlista" />
 
 
     <TextView
-        android:id="@+id/tvNomeEpi"
+        android:id="@+id/tvNomeFunci"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="CAPACETES"
+        android:layout_marginTop="30dp"
+        android:text="Gabriel Oliveira Alexandre"
         android:textColor="#2D5797"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgInfoEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/imgInfoFunci" />
 
     <TextView
-        android:id="@+id/tvDetalhe"
+        android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="Detalhes"
+        android:text="E-mail"
         android:textColor="#2D5797"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNomeEpi" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNomeFunci" />
 
     <TextView
         android:id="@+id/tvInfoEpi"
@@ -49,20 +48,18 @@
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="20dp"
         android:textAlignment="center"
-        android:text="Os capacetes de segurança são
-EPIs obrigatórios em locais que colocam a integridade
-do colaborador em risco, sendo
-o canteiro de obras um exemplo muito comum."
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/tvDetalhe"
+        android:text="........@gmail.com"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
         tools:layout_editor_absoluteX="78dp" />
 
     <TextView
-        android:id="@+id/tvValidade"
+        android:id="@+id/tvTelefone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Validade"
+        android:text="Telefone"
         android:textColor="#2D5797"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,20 +71,20 @@ o canteiro de obras um exemplo muito comum."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="dd/mm/aaaa"
+        android:text="18996619658"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvValidade" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTelefone" />
 
 
     <TextView
-        android:id="@+id/tvInfoCA"
+        android:id="@+id/tvCPF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Certificado de Aprovação"
+        android:text="CPF"
         android:textColor="#2D5797"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,11 +97,12 @@ o canteiro de obras um exemplo muito comum."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="C.A.00000."
+        android:text="46954345809"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvInfoCA" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCPF" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

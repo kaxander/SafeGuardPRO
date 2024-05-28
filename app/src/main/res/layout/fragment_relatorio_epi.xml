@@ -1,213 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity"
-    tools:layout_editor_absoluteX="-46dp"
-    tools:layout_editor_absoluteY="-196dp">
+    android:orientation="vertical">
 
-    <View
-        android:id="@+id/view"
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <View-->
+<!--            android:id="@+id/vNav"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:background="@drawable/gradient"-->
+<!--            tools:layout_editor_absoluteX="129dp"-->
+<!--            tools:layout_editor_absoluteY="0dp" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgLogo"-->
+<!--            android:layout_width="105dp"-->
+<!--            android:layout_height="120dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/vNav"-->
+<!--            app:srcCompat="@drawable/logo" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvRelatorio"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="RELATÓRIO EPI"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="35sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/vNav"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imgLogo" />-->
+<!--        -->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRelatorioEpi"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:background="@drawable/gradient" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="105dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/tvRelatorio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RELATÓRIO EPI"
-        android:textColor="@color/white"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_width="300dp"
-        android:layout_height="320dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="#373535"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRelatorio"
-        app:strokeWidth="1dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CAPUZ"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="16dp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CA: 17419"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="89dp"
-                tools:layout_editor_absoluteY="72dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Val: 23/05/2025"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="55dp"
-                tools:layout_editor_absoluteY="125dp" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Coletivo: SIM"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="72dp"
-                tools:layout_editor_absoluteY="182dp" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_delete"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="272dp" />
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="211dp"
-                tools:layout_editor_absoluteY="272dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/list_item_epi"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
-        android:layout_width="300dp"
-        android:layout_height="320dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#373535"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView"
-        app:strokeWidth="1dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OCULOS"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="108dp"
-                tools:layout_editor_absoluteY="16dp" />
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CA: 18818"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="89dp"
-                tools:layout_editor_absoluteY="72dp" />
-
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Val: 29/07/2025"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="55dp"
-                tools:layout_editor_absoluteY="125dp" />
-
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Coletivo: SIM"
-                android:textColor="@color/white"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="72dp"
-                tools:layout_editor_absoluteY="182dp" />
-
-            <ImageView
-                android:id="@+id/imageView66"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_delete"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="272dp" />
-
-            <ImageView
-                android:id="@+id/imageView77"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="211dp"
-                tools:layout_editor_absoluteY="272dp" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_gravity="start|bottom"
-            android:background="#2D5797" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

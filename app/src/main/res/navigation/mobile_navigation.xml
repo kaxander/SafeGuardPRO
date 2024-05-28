@@ -3,11 +3,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/homePageFragment">
 
+    <fragment
+        android:id="@+id/homepageSupervisorFragment"
+        android:name="com.fourprograms.safeguardpro.view.HomepageSupervisorFragment"
+        android:label="HomepageSupervisorFragment"
+        tools:layout="@layout/fragment_homepage_supervisor"/>
+    <fragment
+        android:id="@+id/cadastroEpiFragment"
+        android:name="com.fourprograms.safeguardpro.view.CadastroEpiFragment"
+        android:label="CadastroEpiFragment"
+        tools:layout="@layout/fragment_cadastro_epi"/>
+    <fragment
+        android:id="@+id/cadastroFuncionarioFragment"
+        android:name="com.fourprograms.safeguardpro.view.CadastroFuncionarioFragment"
+        android:label="CadastroFuncionarioFragment"
+        tools:layout="@layout/fragment_cadastro_funcionario"/>
+    <fragment
+        android:id="@+id/cadastroSupervisorFragment"
+        android:name="com.fourprograms.safeguardpro.view.CadastroSupervisorFragment"
+        android:label="CadastroSupervisorFragment"
+        tools:layout="@layout/fragment_cadastro_supervisor"/>
+    <fragment
+        android:id="@+id/entregaFragment"
+        android:name="com.fourprograms.safeguardpro.view.EntregaFragment"
+        android:label="EntregaFragment"
+        tools:layout="@layout/fragment_entrega"/>
+    <fragment
+        android:id="@+id/escolhaEpiFragment"
+        android:name="com.fourprograms.safeguardpro.view.EntregaEpiFragment"
+        android:label="EscolhaEpiFragment"
+        tools:layout="@layout/fragment_entrega_epi"/>
+    <fragment
+        android:id="@+id/homepageFuncionarioFragment"
+        android:name="com.fourprograms.safeguardpro.view.HomepageFuncionarioFragment"
+        android:label="HomepageFuncionarioFragment"
+        tools:layout="@layout/fragment_homepage_funcionario"/>
+    <fragment
+        android:id="@+id/informacoesEpiFragment"
+        android:name="com.fourprograms.safeguardpro.view.InformacoesEpiFragment"
+        android:label="InformacoesEpiFragment"
+        tools:layout="@layout/fragment_informacoes_epi"/>
+    <fragment
+        android:id="@+id/informacoesFragment"
+        android:name="com.fourprograms.safeguardpro.view.InformacoesFragment"
+        android:label="InformacoesFragment"
+        tools:layout="@layout/fragment_informacoes"/>
+    <fragment
+        android:id="@+id/informacoesFuncionarioFragment"
+        android:name="com.fourprograms.safeguardpro.view.InformacoesFuncionarioFragment"
+        android:label="InformacoesFuncionarioFragment"
+        tools:layout="@layout/fragment_informacoes_funcionario"/>
+    <fragment
+        android:id="@+id/relatorioEpiFragment"
+        android:name="com.fourprograms.safeguardpro.view.RelatorioEpiFragment"
+        android:label="RelatorioEpiFragment"
+        tools:layout="@layout/fragment_relatorio_epi"/>
+    <fragment
+        android:id="@+id/relatorioFuncionarioFragment"
+        android:name="com.fourprograms.safeguardpro.view.RelatorioFuncionarioFragment"
+        android:label="RelatorioFuncionarioFragment"
+        tools:layout="@layout/fragment_relatorio_funcionario"/>
     <activity
         android:id="@+id/mainActivity"
         android:name="com.fourprograms.safeguardpro.view.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/cadastro_sup" />
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.fourprograms.safeguardpro.view.HomePageFragment"
+        android:label="HomePageFragment" />
+    <fragment
+        android:id="@+id/criarAtualizacaoFragment"
+        android:name="com.fourprograms.safeguardpro.view.CriarAtualizacaoFragment"
+        android:label="CriarAtualizacaoFragment" />
 </navigation>
