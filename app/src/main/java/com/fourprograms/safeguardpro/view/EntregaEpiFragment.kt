@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.fourprograms.safeguardpro.databinding.FragmentEntregaBinding
+import androidx.fragment.app.viewModels
+
 import com.fourprograms.safeguardpro.databinding.FragmentEntregaEpiBinding
+import com.fourprograms.safeguardpro.viewmodel.FuncionarioViewModel
 
 class EntregaEpiFragment : Fragment() {
+    private val viewModel: FuncionarioViewModel by viewModels()
 
     private var _binding: FragmentEntregaEpiBinding? = null
     private val binding: FragmentEntregaEpiBinding get() = _binding!!
@@ -24,5 +27,8 @@ class EntregaEpiFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.load()
     }
+
 }
