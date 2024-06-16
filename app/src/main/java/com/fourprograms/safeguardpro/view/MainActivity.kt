@@ -29,5 +29,18 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        navController.addOnDestinationChangedListener { controller, destination, _ ->
+            controller.currentDestination?.let {
+
+                if (it.id == R.id.homepageSupervisorFragment) {
+                    binding.bottomNavigation.menu.clear()
+                    binding.bottomNavigation.inflateMenu(R.menu.bottom_menu)
+                } else if (it.id == R.id.homepageFuncionarioFragment) {
+                    binding.bottomNavigation.menu.clear()
+                    // Caso for exibir outras coisas no menu inferior apenas para funcionario, criar outro menu e chamar na linha abaixo
+//                    binding.bottomNavigation.inflateMenu(R.menu.rodape_fun)
+                }
+            }
+        }
     }
 }

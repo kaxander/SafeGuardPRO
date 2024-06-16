@@ -63,24 +63,25 @@ class EpiViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun update(epi: Epi) {
-
+    fun selectEpiByCa(ca: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-
             try {
-
-                val updatedEpi = repository.updateEpi(epi)
-
-                mUpdatedEpi.postValue(updatedEpi)
-
+                mEpi.postValue(repository.selectEpiByCa(ca))
             } catch (e: Exception) {
-
                 mErro.postValue(e.message)
-
             }
-
         }
+    }
 
+    fun update(epi: Epi) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val updatedEpi = repository.updateEpi(epi)
+                mUpdatedEpi.postValue(updatedEpi)
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
+        }
     }
 
     fun delete(id: Int) {

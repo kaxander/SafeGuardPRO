@@ -63,24 +63,25 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    fun update(funcionario: Funcionario) {
-
+    fun selectFuncionarioByCpf(cpf: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-
             try {
-
-                val updatedPessoa = repository.updateFuncionario(funcionario)
-
-                mUpdatedFuncionario.postValue(updatedPessoa)
-
+                mFuncionario.postValue(repository.selectFuncionarioByCpf(cpf))
             } catch (e: Exception) {
-
                 mErro.postValue(e.message)
-
             }
-
         }
+    }
 
+    fun update(funcionario: Funcionario) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val updatedPessoa = repository.updateFuncionario(funcionario)
+                mUpdatedFuncionario.postValue(updatedPessoa)
+            } catch (e: Exception) {
+                mErro.postValue(e.message)
+            }
+        }
     }
 
     fun delete(id: Int) {

@@ -37,23 +37,13 @@ class EntregaRepository(context: Context) {
     }
 
     suspend fun updateEmprestimo(entregaEpi: EntregaEpi): EntregaEpi {
-
         return mRemote.updateEmprestimo(
-
             validade = entregaEpi.validade.toRequestBody("text/plain".toMediaTypeOrNull()),
-
             funcionario = entregaEpi.funcionario.toRequestBody("text/plain".toMediaTypeOrNull()),
-
             epi = entregaEpi.epi.toRequestBody("text/plain".toMediaTypeOrNull()),
-
             id_funcionario = entregaEpi.id_funcionario.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
-
             id_epi = entregaEpi.id_epi.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
-
             emprestimoId = entregaEpi.id
-
         ).body() ?: emprestimoEmpty
-
     }
-
 }

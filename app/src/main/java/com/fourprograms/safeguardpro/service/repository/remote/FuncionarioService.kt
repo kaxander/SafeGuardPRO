@@ -24,28 +24,28 @@ interface FuncionarioService {
         @Part("nome") nome: RequestBody,
         @Part("email") email: RequestBody,
         @Part("telefone") telefone: RequestBody,
-        @Part("cpf") cpf: RequestBody
-
+        @Part("cpf") cpf: RequestBody,
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
     ): Response<Funcionario>
 
     @GET("select_unico_funcionario/{id_select_funcionario}")
     suspend fun getFuncionarioById(@Path("id_select_funcionario") id: Int): Response<List<Funcionario>>
 
+    @GET("get_funcionario/{funcionario_cpf}")
+    suspend fun getFuncionarioByCpf(@Path("funcionario_cpf") cpf: Int): Response<List<Funcionario>>
+
     @Multipart
     @PUT("update_funcionario/{funcionario_id}")
     suspend fun updateFuncionario(
         @Path("funcionario_id") funcionarioId: Int,
-
         @Part("nome") nome: RequestBody,
-
         @Part("email") email: RequestBody,
-
         @Part("cpf") cpf: RequestBody,
-
         @Part("telefone") telefone: RequestBody,
-
-        ): Response<Funcionario>
-
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
+    ): Response<Funcionario>
 
     @DELETE("delete_funcionario/{funcionario_id}")
     suspend fun deleteFuncionarioById(@Path("funcionario_id") id: Int): Response<Funcionario>

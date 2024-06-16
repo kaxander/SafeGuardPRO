@@ -18,11 +18,13 @@ class FuncionarioRepository(context: Context) {
 
     suspend fun insertFuncionario(funcionario: Funcionario): Funcionario {
         return mRemote.createFuncionario(
-                nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
-                email = funcionario.email.toRequestBody("text/plain".toMediaTypeOrNull()),
-                telefone = funcionario.telefone.toRequestBody("text/plain".toMediaTypeOrNull()),
-                cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
-            ).body() ?: funcionarioEmpty
+            nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
+            email = funcionario.email.toRequestBody("text/plain".toMediaTypeOrNull()),
+            telefone = funcionario.telefone.toRequestBody("text/plain".toMediaTypeOrNull()),
+            cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+        ).body() ?: funcionarioEmpty
     }
 
     suspend fun selectFuncionario(id: Int): Funcionario {
@@ -34,24 +36,28 @@ class FuncionarioRepository(context: Context) {
         }
     }
 
-    suspend fun updateFuncionario(funcionario: Funcionario): Funcionario {
-
-        return mRemote.updateFuncionario(
-
-            nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            email = funcionario.email.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            telefone = funcionario.telefone.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            funcionarioId = funcionario.id
-
-        ).body() ?: funcionarioEmpty
-
+    suspend fun selectFuncionarioByCpf(cpf: Int): Funcionario {
+        val response = mRemote.getFuncionarioByCpf(cpf)
+        return if (response.isSuccessful) {
+            response.body()?.first() ?: funcionarioEmpty
+        } else {
+            funcionarioEmpty
+        }
     }
-    suspend fun deleteFuncionario(id: Int): Boolean{
+
+    suspend fun updateFuncionario(funcionario: Funcionario): Funcionario {
+        return mRemote.updateFuncionario(
+            nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
+            email = funcionario.email.toRequestBody("text/plain".toMediaTypeOrNull()),
+            cpf = funcionario.cpf.toRequestBody("text/plain".toMediaTypeOrNull()),
+            telefone = funcionario.telefone.toRequestBody("text/plain".toMediaTypeOrNull()),
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+            funcionarioId = funcionario.id
+        ).body() ?: funcionarioEmpty
+    }
+
+    suspend fun deleteFuncionario(id: Int): Boolean {
         return mRemote.deleteFuncionarioById(id).isSuccessful
     }
 }

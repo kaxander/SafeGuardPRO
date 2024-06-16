@@ -26,7 +26,6 @@ interface EntregaService {
         @Part("id_epi") id_epi: RequestBody,
         @Part("funcionario") funcionario: RequestBody,
         @Part("epi") epi: RequestBody
-
     ): Response<EntregaEpi>
 
     @GET("select_unico_emprestimo/{id_select_emprestimo}")
@@ -36,19 +35,12 @@ interface EntregaService {
     @PUT("update_emprestimo/{emprestimo_id}")
     suspend fun updateEmprestimo(
         @Path("emprestimo_id") emprestimoId: Int,
-
         @Part("validade") validade: RequestBody,
-
         @Part("id_funcionario") id_funcionario: RequestBody,
-
         @Part("id_epi") id_epi: RequestBody,
-
         @Part("funcionario") funcionario: RequestBody,
-
         @Part("epi") epi: RequestBody
-
-        ): Response<EntregaEpi>
-
+    ): Response<EntregaEpi>
 
     @DELETE("delete_emprestimo/{emprestimo_id}")
     suspend fun deleteEmprestimoById(@Path("emprestimo_id") id: Int): Response<EntregaEpi>

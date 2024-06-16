@@ -6,6 +6,5 @@ data class Epi(
     var descricao: String = "",
     var validade: String = "",
     var uso_coletivo: String = "",
-    var certificado_aprovacao: String = "",
+    var certificado_aprovacao: Int = 0,
 )
-

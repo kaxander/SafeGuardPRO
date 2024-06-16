@@ -57,7 +57,7 @@ class CadastroEpiFragment : Fragment() {
         binding.btnCadastrar.setOnClickListener {
 
             val tipo = binding.edttipo.editText?.editableText.toString()
-            val certificado_aprovacao = binding.edtCa.editText?.editableText.toString()
+            val certificado_aprovacao = binding.edtCa.editText?.editableText.toString().toInt()
             val descricao = binding.edtDescricao.editText?.editableText.toString()
             val validade = binding.edtValidade.editText?.editableText.toString()
             val uso_coletivo = binding.edtUsoColetivo.editText?.editableText.toString()
@@ -92,25 +92,25 @@ class CadastroEpiFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        binding.btnDelete.setOnClickListener {
-
-            AlertDialog.Builder(requireContext())
-
-                .setTitle("Exclusão de epi")
-
-                .setMessage("Você realmente deseja excluir essa epi?")
-
-                .setPositiveButton("Sim"){ _,_ ->
-
-                    viewModel.delete(viewModel.epi.value?.id ?: 0)
-
-                }
-
-                .setNegativeButton("Não"){_,_ ->}
-
-                .show()
-
-        }
+//        binding.btnDelete.setOnClickListener {
+//
+//            AlertDialog.Builder(requireContext())
+//
+//                .setTitle("Exclusão de epi")
+//
+//                .setMessage("Você realmente deseja excluir essa epi?")
+//
+//                .setPositiveButton("Sim"){ _,_ ->
+//
+//                    viewModel.delete(viewModel.epi.value?.id ?: 0)
+//
+//                }
+//
+//                .setNegativeButton("Não"){_,_ ->}
+//
+//                .show()
+//
+//        }
         viewModel.deletedEpi.observe(viewLifecycleOwner){
             findNavController().navigateUp()
         }

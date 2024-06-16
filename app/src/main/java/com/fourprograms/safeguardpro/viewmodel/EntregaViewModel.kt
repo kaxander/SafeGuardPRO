@@ -66,23 +66,13 @@ class EntregaViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun update(entregaEpi: EntregaEpi) {
-
         viewModelScope.launch(Dispatchers.IO) {
-
             try {
-
                 val updatedEmprestimo = repository.updateEmprestimo(entregaEpi)
-
                 mUpdatedEmpretimo.postValue(updatedEmprestimo)
-
             } catch (e: Exception) {
-
                 mErro.postValue(e.message)
-
             }
-
         }
-
     }
-
 }

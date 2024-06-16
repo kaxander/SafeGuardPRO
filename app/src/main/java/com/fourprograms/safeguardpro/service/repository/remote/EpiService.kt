@@ -20,16 +20,18 @@ interface EpiService {
     @Multipart
     @POST("add_epi")
     suspend fun createEpi(
-      @Part("tipo") tipo: RequestBody,
-      @Part("descricao") descricao: RequestBody,
-      @Part("validade") validade: RequestBody,
-      @Part("uso_coletivo") uso_coletivo: RequestBody,
-      @Part("certificado_aprovacao") certificado_aprovacao: RequestBody
-
+        @Part("tipo") tipo: RequestBody,
+        @Part("descricao") descricao: RequestBody,
+        @Part("validade") validade: RequestBody,
+        @Part("uso_coletivo") uso_coletivo: RequestBody,
+        @Part("certificado_aprovacao") certificado_aprovacao: RequestBody
     ): Response<Epi>
 
     @GET("select_unica_epi/{id_select_epi}")
     suspend fun getEpiById(@Path("id_select_epi") id: Int): Response<List<Epi>>
+
+    @GET("select_epis/{epi_ca}")
+    suspend fun getEpiByCa(@Part("epi_ca") ca: Int): Response<List<Epi>>
 
     @Multipart
     @PUT("update_epi/{epi_id}")
@@ -40,8 +42,7 @@ interface EpiService {
         @Part("validade") validade: RequestBody,
         @Part("uso_coletivo") uso_coletivo: RequestBody,
         @Part("certificado_aprovacao") certificado_aprovacao: RequestBody,
-
-        ): Response<Epi>
+    ): Response<Epi>
 
 
     @DELETE("delete_epi/{epi_id}")

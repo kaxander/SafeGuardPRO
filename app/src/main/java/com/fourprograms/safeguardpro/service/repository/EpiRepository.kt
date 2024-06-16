@@ -21,7 +21,7 @@ class EpiRepository(context: Context) {
             descricao = epi.descricao.toRequestBody("text/plain".toMediaTypeOrNull()),
             validade = epi.validade.toRequestBody("text/plain".toMediaTypeOrNull()),
             uso_coletivo = epi.uso_coletivo.toRequestBody("text/plain".toMediaTypeOrNull()),
-            certificado_aprovacao = epi.certificado_aprovacao.toRequestBody("text/plain".toMediaTypeOrNull()),
+            certificado_aprovacao = epi.certificado_aprovacao.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
         ).body() ?: epiEmpty
     }
 
@@ -34,26 +34,27 @@ class EpiRepository(context: Context) {
         }
     }
 
-    suspend fun updateEpi(epi: Epi): Epi {
-
-        return mRemote.updateEpi(
-
-            tipo = epi.tipo.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            descricao = epi.descricao.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            validade = epi.validade.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            uso_coletivo = epi.uso_coletivo.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            certificado_aprovacao = epi.certificado_aprovacao.toRequestBody("text/plain".toMediaTypeOrNull()),
-
-            epiId = epi.id
-
-        ).body() ?: epiEmpty
-
+    suspend fun selectEpiByCa(ca: Int): Epi {
+        val response = mRemote.getEpiByCa(ca)
+        return if (response.isSuccessful) {
+            response.body()?.first() ?: epiEmpty
+        } else {
+            epiEmpty
+        }
     }
-    suspend fun deleteEpi(id: Int): Boolean{
+
+    suspend fun updateEpi(epi: Epi): Epi {
+        return mRemote.updateEpi(
+            tipo = epi.tipo.toRequestBody("text/plain".toMediaTypeOrNull()),
+            descricao = epi.descricao.toRequestBody("text/plain".toMediaTypeOrNull()),
+            validade = epi.validade.toRequestBody("text/plain".toMediaTypeOrNull()),
+            uso_coletivo = epi.uso_coletivo.toRequestBody("text/plain".toMediaTypeOrNull()),
+            certificado_aprovacao = epi.certificado_aprovacao.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
+            epiId = epi.id
+        ).body() ?: epiEmpty
+    }
+
+    suspend fun deleteEpi(id: Int): Boolean {
         return mRemote.deleteEpiById(id).isSuccessful
     }
 }

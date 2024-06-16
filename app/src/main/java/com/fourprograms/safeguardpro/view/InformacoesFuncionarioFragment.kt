@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.fourprograms.safeguardpro.databinding.FragmentInformacoesFuncionarioBinding
+import com.fourprograms.safeguardpro.viewmodel.FuncionarioViewModel
 
 class InformacoesFuncionarioFragment : Fragment() {
 
+    private val viewModel: FuncionarioViewModel by viewModels()
 
     private var _binding: FragmentInformacoesFuncionarioBinding? = null
     private val binding: FragmentInformacoesFuncionarioBinding get() = _binding!!

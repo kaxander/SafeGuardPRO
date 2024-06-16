@@ -89,25 +89,25 @@ class CadastroFuncionarioFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        binding.btnDelete.setOnClickListener {
-
-            AlertDialog.Builder(requireContext())
-
-                .setTitle("Exclusão de funcionário")
-
-                .setMessage("Você realmente deseja excluir esse funcionário?")
-
-                .setPositiveButton("Sim"){ _,_ ->
-
-                    viewModel.delete(viewModel.funcionario.value?.id ?: 0)
-
-                }
-
-                .setNegativeButton("Não"){_,_ ->}
-
-                .show()
-
-        }
+//        binding.btnDelete.setOnClickListener {
+//
+//            AlertDialog.Builder(requireContext())
+//
+//                .setTitle("Exclusão de funcionário")
+//
+//                .setMessage("Você realmente deseja excluir esse funcionário?")
+//
+//                .setPositiveButton("Sim"){ _,_ ->
+//
+//                    viewModel.delete(viewModel.funcionario.value?.id ?: 0)
+//
+//                }
+//
+//                .setNegativeButton("Não"){_,_ ->}
+//
+//                .show()
+//
+//        }
 
         viewModel.deletedFuncionario.observe(viewLifecycleOwner){
             findNavController().navigateUp()
