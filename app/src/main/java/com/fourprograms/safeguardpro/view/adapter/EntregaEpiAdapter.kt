@@ -23,6 +23,7 @@ class EntregaEpiAdapter(
             binding.root.setOnClickListener {
                 clickListListener(entregaEntregaEpi)
             }
+
         }
     }
 

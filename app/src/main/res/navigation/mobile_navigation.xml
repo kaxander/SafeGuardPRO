@@ -78,4 +78,8 @@
         android:id="@+id/criarAtualizacaoFragment"
         android:name="com.fourprograms.safeguardpro.view.CriarAtualizacaoFragment"
         android:label="CriarAtualizacaoFragment" />
+    <fragment
+        android:id="@+id/informacoesEntregaEpiFragment"
+        android:name="com.fourprograms.safeguardpro.view.informacoesEntregaEpiFragment"
+        android:label="informacoesEntregaEpiFragment" />
 </navigation>

@@ -9,19 +9,25 @@ import com.fourprograms.safeguardpro.service.model.Epi
 
 class EpiAdapter(
     epis: List<Epi>?,
-    private val clickListListener: (Epi) -> Unit
+    private val clickListListener: (Epi) -> Unit,
+    private val clickDelete: (Int) -> Unit
 ) : RecyclerView.Adapter<EpiAdapter.EpiViewHolder>() {
 
-    private var epiList: List<Epi> = arrayListOf()
+    private var epiList: List<Epi> = mutableListOf()
 
-    class EpiViewHolder(private val binding: ListItemEpiBinding) :
+    inner class EpiViewHolder(private val binding: ListItemEpiBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(
             epi: Epi,
-            clickListListener: (Epi) -> Unit
+            clickListListener: (Epi) -> Unit,
+            clickDelete: (Int) -> Unit
         ) {
             binding.root.setOnClickListener {
                 clickListListener(epi)
+            }
+
+            binding.btnDelete.setOnClickListener{
+                clickDelete(epi.id)
             }
         }
     }
@@ -44,7 +50,7 @@ class EpiAdapter(
         holder: EpiViewHolder,
         position: Int
     ) {
-        holder.bind(epiList[position], clickListListener)
+        holder.bind(epiList[position], clickListListener, clickDelete)
     }
 
     fun updateEpis(list: List<Epi>){

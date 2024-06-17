@@ -35,12 +35,16 @@ class RelatorioEpiFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //Quando clicar em algum item da lista
-        adapter = EpiAdapter(viewModel.epiList.value) { epi ->
+        adapter = EpiAdapter(listOf(),{
+            // padrao das outras adapter
             val epiBundle = Bundle()
-            epiBundle.putInt("epiId", epi.id)
+            epiBundle.putInt("epiId", it.id)
             arguments = epiBundle
             findNavController().navigate(R.id.cadastroEpiFragment, arguments)
-        }
+        }, {
+            // chamar a funcao delete da viewmodel
+            viewModel.delete(it)
+        })
 
         // Configura a recycler
         val recycler = binding.rvRelatorioEpi
